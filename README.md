@@ -15,17 +15,20 @@ A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
 - Criadores -> Os créditos do jogo com nossos nomes;
 - Sair -> Fecha o jogo;
 
-<p align="center"><img src="Captura de tela de 2023-05-17 13-49-10.png" alt="Menu"</p>
-
-## Ajustes:
+<p align="center"><img src="1.png" alt="Menu"</p>
+	
+## Ajustes
 - Pular Puzzles -> Opção feita para pessoas que querem aproveitar a história;
 - Reajustar Controles -> Permite remapear as teclas;
 - Volume -> Ajuste de Volume;
 - Tamanho da Fonte -> Para facilitar a leitura;
 - Filtros de Daltonismo diferentes;
 	
-<p align="center"><img src="Captura de tela de 2023-05-17 13-49-53.png" alt="Ajustes"></p>
+<p align="center"><img src="2.png" alt="Ajustes"></p>
 
+## Créditos:
+- Os nomes dos integrantes do grupo;
+<p align="center"><img src="3.png" alt="Créditos"></p>
 
 
 
