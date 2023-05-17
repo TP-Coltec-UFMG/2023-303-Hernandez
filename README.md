@@ -30,6 +30,5 @@ A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
 - Os nomes dos integrantes do grupo;
 <p align="center"><img src="3.png" alt="Créditos"></p>
 
-
-
-
+## Sprites
+-> Drive com os sprites: https://drive.google.com/drive/folders/1_L_OlOB_ZHcBxXEfGciqQ4gHU6Divk-U?usp=sharing
