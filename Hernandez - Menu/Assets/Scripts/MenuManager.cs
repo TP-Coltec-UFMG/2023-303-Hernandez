@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -15,6 +16,10 @@ public class MenuManager : MonoBehaviour
     public void FecharAjustes(){
         menuPrincipal.SetActive(true);
         ajustes.SetActive(false);
+    }
+
+    public void Jogar(){
+        SceneManager.LoadScene("firstScene");
     }
 
     public void Sair(){
