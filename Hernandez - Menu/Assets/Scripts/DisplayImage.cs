@@ -6,8 +6,9 @@ public class DisplayImage : MonoBehaviour
 {
     [SerializeField] private int currentWall;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject fourDigits;
     private SpriteRenderer sprite;
+
+    [SerializeField] private GameObject fourDigits;
 
     private void Start() {
         sprite = GetComponent<SpriteRenderer>();
@@ -25,7 +26,7 @@ public class DisplayImage : MonoBehaviour
         //18 * currentWall
     }
 
-    public void Digit4(){
+    public void TurnOnDigit4(){
         this.fourDigits.SetActive(true);
     }
 
