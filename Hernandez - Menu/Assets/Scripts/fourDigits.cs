@@ -30,6 +30,4 @@ public class fourDigits : MonoBehaviour
         }
         number.text = currentNum.ToString();
     }
-
-    
 }
