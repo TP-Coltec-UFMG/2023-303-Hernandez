@@ -10,6 +10,8 @@ public class DisplayImage : MonoBehaviour
     private SpriteRenderer sprite;
 
     [SerializeField] private GameObject fourDigits;
+    [SerializeField] private GameObject photoFind;
+    [SerializeField] private GameObject buttonPhotoFind;
 
     private void Start() {
         sprite = GetComponent<SpriteRenderer>();
@@ -33,5 +35,15 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOffDigit4(){
         this.fourDigits.SetActive(false);
+    }
+
+    public void TurnOnPhotoFind(){
+        this.photoFind.SetActive(true);
+        this.buttonPhotoFind.SetActive(false);
+    }
+
+    public void TurnOffPhotoFind(){
+        this.photoFind.SetActive(false);
+        this.buttonPhotoFind.SetActive(true);
     }
 }
