@@ -10,6 +10,8 @@ public class Verifica : MonoBehaviour
     [SerializeField] private Text answerDigit3;
     [SerializeField] private Text answerDigit4;
     [SerializeField] private GameObject fourDigits;
+    [SerializeField] private GameObject portaFechada;
+    [SerializeField] private GameObject portaAberta;
 
     public void Update(){
         VerificaDigit4();
@@ -19,6 +21,8 @@ public class Verifica : MonoBehaviour
         if((answerDigit1.text == "1")&&(answerDigit2.text == "9")&&(answerDigit3.text == "4")&&(answerDigit4.text == "5"))
         {
             this.fourDigits.SetActive(false);
+            this.portaFechada.SetActive(false);
+            this.portaAberta.SetActive(true);
         }
     }
 
