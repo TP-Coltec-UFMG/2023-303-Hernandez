@@ -5,6 +5,10 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour , IDragHandler , IEndDragHandler
 {
+    private Vector3 startingPoint;
+    private void Start() {
+        startingPoint = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+    }
     public void OnDrag(PointerEventData eventData) 
     {
         this.transform.position = Input.mousePosition;
@@ -34,6 +38,10 @@ public class DragDrop : MonoBehaviour , IDragHandler , IEndDragHandler
         else if  ((200 < this.transform.localPosition.y) && (this.transform.localPosition.y < 420) && (315 < this.transform.localPosition.x) && (this.transform.localPosition.x < 535))
         {
             this.transform.localPosition = new Vector3(425, 310, this.transform.localPosition.z);
+        }
+        else
+        {
+            this.transform.position = startingPoint;
         }
     }
 }
