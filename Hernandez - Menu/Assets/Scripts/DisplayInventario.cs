@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DisplayInventario : MonoBehaviour
 {
-    private void OnMouseOver() {
-        Debug.Log("oi");
-        while(this.transform.position.y < -194)
+    [SerializeField] Inventario item;
+    public void OnMouseOver() 
+    {
+        if(item.activeDrag)
         {
-            this.transform.position = new Vector3(this.transform.position.x, -194, this.transform.position.z);
+            item.DisplayText(true);
         }
+    }
+    private void OnMouseExit()
+    {
+        item.DisplayText(false);
     }
 
-    private void OnMouseExit() 
-    {
-        while(this.transform.position.y < 194)
-        {
-            this.transform.position = new Vector3(this.transform.position.x, -255, this.transform.position.z);
-        }
-    }
+
+    
 }
