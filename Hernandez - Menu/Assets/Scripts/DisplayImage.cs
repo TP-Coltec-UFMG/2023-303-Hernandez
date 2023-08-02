@@ -22,6 +22,17 @@ public class DisplayImage : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
     }
 
+    private void FixedUpdate() {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            changeWall(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            changeWall(false);
+        }
+    }
+
     public void changeWall(bool dir){
 
         if (dir) currentWall++;
