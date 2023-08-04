@@ -10,6 +10,7 @@ public class DisplayInventario : MonoBehaviour
         if(item.activeDrag)
         {
             item.DisplayText(true);
+            Debug.Log("ok");
         }
     }
     private void OnMouseExit()
