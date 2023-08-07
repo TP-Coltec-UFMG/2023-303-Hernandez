@@ -8,6 +8,7 @@ public class LightPanel : MonoBehaviour
     [SerializeField] private theLightSwitch lightSwitch_2;
     [SerializeField] private theLightSwitch lightSwitch_3;
     [SerializeField] private theLightSwitch lightSwitch_4;
+    [SerializeField] private theLightSwitch lightSwitch_5;
 
     private bool switchOK = false;
     void Update()
@@ -17,7 +18,7 @@ public class LightPanel : MonoBehaviour
 
     public void VerificaLigar()
     {
-        if ((lightSwitch_1.isOn == true) && (lightSwitch_2.isOn == true) && (lightSwitch_3.isOn == true) && (lightSwitch_4.isOn == true))
+        if ((lightSwitch_1.isOn == true) && (lightSwitch_2.isOn == true) && (lightSwitch_3.isOn == true) && (lightSwitch_4.isOn == true) && (lightSwitch_5.isOn == true))
         {
             switchOK = true;
         }

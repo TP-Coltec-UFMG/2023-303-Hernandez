@@ -94,7 +94,7 @@ public class DisplayImage : MonoBehaviour
     {
         if(firstLightPanel == true)
         {
-            this.quadroMC.transform.position = new Vector3(46.875f, 3.55f);
+            this.quadroMC.transform.position = new Vector3(47.15f, 3.17f);
             firstLightPanel = false;
         }
         else{
