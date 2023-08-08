@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject ajustes;
+    [SerializeField] private GameObject creditos;
     [SerializeField] private GameObject menuPrincipal;
 
     public void AbrirAjustes(){
@@ -18,8 +19,18 @@ public class MenuManager : MonoBehaviour
         ajustes.SetActive(false);
     }
 
+    public void AbrirCreditos(){
+        menuPrincipal.SetActive(false);
+        creditos.SetActive(true);
+    }
+
+    public void FecharCreditos(){
+        menuPrincipal.SetActive(true);
+        creditos.SetActive(false);
+    }
+
     public void Jogar(){
-        SceneManager.LoadScene("firstScene");
+        SceneManager.LoadScene("Secreto");
     }
 
     public void Sair(){
