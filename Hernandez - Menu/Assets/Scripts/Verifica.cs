@@ -40,9 +40,6 @@ public class Verifica : MonoBehaviour
         {
             this.photoFind.SetActive(false);
         }
-
-
-        
         
     }
 
