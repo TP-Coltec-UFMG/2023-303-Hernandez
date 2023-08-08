@@ -5,7 +5,7 @@
 
 <p align="center"> Equipe: Gabi, Iza, Smolinski, Léo, Thales, Eduardo </p>
 
-# Menu Principal
+# Menu Principal 
 
 ## Tela inicial:
 A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
