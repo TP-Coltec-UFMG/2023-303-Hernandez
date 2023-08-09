@@ -20,9 +20,11 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject photoFind;
     [SerializeField] private GameObject buttonPhotoFind;
     [SerializeField] private GameObject lightPanel;
-    [SerializeField] private GameObject painelTV;
+    [SerializeField] private GameObject puzzle8;
     [SerializeField] private GameObject buttonTV;
+    [SerializeField] private GameObject TV;
     [SerializeField] private GameObject closeTV;
+    [SerializeField] private GameObject painelTV;
 
     private void Start()
     {
@@ -70,20 +72,22 @@ public class DisplayImage : MonoBehaviour
     }
 
 
-    //Desabilitar Puzzles
+    //Desabilitar Puzzles ///
     public void TurnOnTV()
     {
-        this.painelTV.SetActive(true);
         this.buttonTV.SetActive(false);
+        this.TV.SetActive(false);
         this.closeTV.SetActive(true);
-    }
-    public void TurnOffTV()
-    {
-        this.painelTV.SetActive(false);
-        this.buttonTV.SetActive(true);
-        this.closeTV.SetActive(false);
+        this.painelTV.SetActive(true);
     }
 
+    public void TurnOffTV()
+    {
+        this.buttonTV.SetActive(true);
+        this.TV.SetActive(true);
+        this.closeTV.SetActive(false);
+        this.painelTV.SetActive(false);
+    }
     public void TurnOnDigit4()
     {
         this.fourDigits.SetActive(true);
@@ -121,6 +125,14 @@ public class DisplayImage : MonoBehaviour
     public void TurnOffLightPanel()
     {
         this.lightPanel.SetActive(false);
+    }
+
+    public void TurnOn8Puzzle(){
+        this.puzzle8.SetActive(true);
+    }
+
+    public void TurnOff8Puzzle(){
+        this.puzzle8.SetActive(false);
     }
 
 
