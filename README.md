@@ -32,3 +32,6 @@ A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
 
 ## Sprites
 -> Drive com os sprites: https://drive.google.com/drive/folders/1_L_OlOB_ZHcBxXEfGciqQ4gHU6Divk-U?usp=sharing
+
+## Puzzles
+
