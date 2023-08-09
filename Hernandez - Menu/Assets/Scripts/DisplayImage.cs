@@ -20,6 +20,9 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject photoFind;
     [SerializeField] private GameObject buttonPhotoFind;
     [SerializeField] private GameObject lightPanel;
+    [SerializeField] private GameObject painelTV;
+    [SerializeField] private GameObject buttonTV;
+    [SerializeField] private GameObject closeTV;
 
     private void Start()
     {
@@ -68,6 +71,19 @@ public class DisplayImage : MonoBehaviour
 
 
     //Desabilitar Puzzles
+    public void TurnOnTV()
+    {
+        this.painelTV.SetActive(true);
+        this.buttonTV.SetActive(false);
+        this.closeTV.SetActive(true);
+    }
+    public void TurnOffTV()
+    {
+        this.painelTV.SetActive(false);
+        this.buttonTV.SetActive(true);
+        this.closeTV.SetActive(false);
+    }
+
     public void TurnOnDigit4()
     {
         this.fourDigits.SetActive(true);
