@@ -11,7 +11,7 @@ public class Puzzle8 : MonoBehaviour
     GameObject button;
 
     private void Start() {
-        iBlank = findInArray(3);
+        iBlank = FindInArray(3);
     }
 
     public void MovePiece(int piece){
@@ -20,7 +20,7 @@ public class Puzzle8 : MonoBehaviour
         if (CanMove(iPiece)){
 
             button = GameObject.Find(piece.ToString());
-            button.transform.localPosition = new Vector2(blankX(), blankY());
+            button.transform.localPosition = new Vector2(BlankX(), BlankY());
 
             int swp = iPiece;
             iPiece = iBlank;
@@ -29,27 +29,27 @@ public class Puzzle8 : MonoBehaviour
             positions[iBlank] = 3;
             positions[iPiece] = piece;
 
-            if(confere()){
+            if(Confere()){
                 Debug.Log("Deu bom");
             }
         }
     }
 
-    private bool confere(){
+    private bool Confere(){
         for(int i = 0; i < 9; i++){
             if(!(positions[i] == reference[i])) return false;
         }
         return true;
     }
 
-    private int findInArray(int piece){
+    private int FindInArray(int piece){
         for (int i = 0; i < 9; i++){
             if (positions[i] == piece) return i;
         }
         return -1;
     }
 
-    private bool canMove(int iPiece){
+    private bool CanMove(int iPiece){
         if(iPiece == iBlank + 3 || iPiece == iBlank - 3) return true;
         else if(iBlank % 3 == 0 && iPiece == (iBlank + 1)) return true;
         else if(iBlank % 3 == 1 && (iPiece == (iBlank + 1) || iPiece == (iBlank - 1))) return true;
@@ -57,13 +57,13 @@ public class Puzzle8 : MonoBehaviour
         else return false;
     }
 
-    private int blankY(){
+    private int BlankY(){
         if (iBlank < 3) return 400;
         else if (iBlank < 6) return 0;
         else return -400;
     }
 
-    private int blankX(){
+    private int BlankX(){
         if (iBlank % 3 == 0) return -400;
         else if (iBlank % 3 == 1) return 0;
         else return 400;
