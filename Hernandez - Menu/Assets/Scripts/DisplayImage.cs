@@ -8,9 +8,8 @@ public class DisplayImage : MonoBehaviour
 {
     [SerializeField] private int currentWall;
     [SerializeField] private Camera mainCamera;
-    private SpriteRenderer sprite;
     [SerializeField] private GameObject quadroMC;
-    private bool firstLightPanel = true;
+    private SpriteRenderer sprite;
 
     [SerializeField] private GameObject parede1;
     [SerializeField] private GameObject parede2;
@@ -21,18 +20,22 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject photoFind;
     [SerializeField] private GameObject buttonPhotoFind;
     [SerializeField] private GameObject lightPanel;
+    [SerializeField] private GameObject lightPanelBase;
     [SerializeField] private GameObject puzzle8;
+    [SerializeField] private GameObject puzzle8base;
     [SerializeField] private GameObject buttonTV;
     [SerializeField] private GameObject TV;
     [SerializeField] private GameObject closeTV;
     [SerializeField] private GameObject painelTV;
+
+    [SerializeField] private Puzzle8 the_puzzle;
 
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -41,6 +44,13 @@ public class DisplayImage : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             changeWall(false);
+        }
+
+        if(the_puzzle.Confere() == true)
+        {
+            this.quadroMC.transform.position = new Vector3(47.15f, 3.17f);
+            this.lightPanelBase.SetActive(true);
+            this.puzzle8base.SetActive(false);
         }
     }
 
@@ -113,14 +123,7 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOnLightPanel()
     {
-        if(firstLightPanel == true)
-        {
-            this.quadroMC.transform.position = new Vector3(47.15f, 3.17f);
-            firstLightPanel = false;
-        }
-        else{
-            this.lightPanel.SetActive(true);
-        }
+        this.lightPanel.SetActive(true);
     }
 
     public void TurnOffLightPanel()

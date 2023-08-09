@@ -25,6 +25,5 @@ public class DisplayItemText : MonoBehaviour
         itemFalso.DisplayText(false);
     }
 
-
     
 }

@@ -35,7 +35,7 @@ public class Puzzle8 : MonoBehaviour
         }
     }
 
-    private bool Confere(){
+    public bool Confere(){
         for(int i = 0; i < 9; i++){
             if(!(positions[i] == reference[i])) return false;
         }
