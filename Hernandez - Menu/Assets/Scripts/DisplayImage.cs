@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DisplayImage : MonoBehaviour
 {
@@ -133,6 +134,11 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOff8Puzzle(){
         this.puzzle8.SetActive(false);
+    }
+
+    public void ComputerScene()
+    {
+        SceneManager.LoadScene("Computer");
     }
 
 
