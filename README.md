@@ -15,7 +15,7 @@ A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
 - Criadores -> Os créditos do jogo com nossos nomes;
 - Sair -> Fecha o jogo;
 
-<p align="center"><img src="1.png" alt="Menu"</p>
+<p align="center"><img src="Imagens/1.png" alt="Menu"</p>
 	
 ## Ajustes
 - Pular Puzzles -> Opção feita para pessoas que querem aproveitar a história;
@@ -24,11 +24,11 @@ A imagem abaixo mostra nosso 'Menu Principal', com 5 botões clicáveis:
 - Tamanho da Fonte -> Para facilitar a leitura;
 - Filtros de Daltonismo diferentes;
 	
-<p align="center"><img src="2.png" alt="Ajustes"></p>
+<p align="center"><img src="Imagens/2.png" alt="Ajustes"></p>
 
 ## Créditos:
 - Os nomes dos integrantes do grupo;
-<p align="center"><img src="3.png" alt="Créditos"></p>
+<p align="center"><img src="Imagens/3.png" alt="Créditos"></p>
 
 ## Sprites
 -> Drive com os sprites: https://drive.google.com/drive/folders/1_L_OlOB_ZHcBxXEfGciqQ4gHU6Divk-U?usp=sharing
