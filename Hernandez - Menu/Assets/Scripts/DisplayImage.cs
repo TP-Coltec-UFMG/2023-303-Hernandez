@@ -20,6 +20,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject photoFind;
     [SerializeField] private GameObject buttonPhotoFind;
     [SerializeField] private GameObject lightPanel;
+    [SerializeField] private GameObject lightPanel2;
     [SerializeField] private GameObject lightPanelBase;
     [SerializeField] private GameObject puzzle8;
     [SerializeField] private GameObject puzzle8base;
@@ -27,6 +28,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject TV;
     [SerializeField] private GameObject closeTV;
     [SerializeField] private GameObject painelTV;
+
 
     [SerializeField] private Puzzle8 the_puzzle;
 
@@ -124,11 +126,13 @@ public class DisplayImage : MonoBehaviour
     public void TurnOnLightPanel()
     {
         this.lightPanel.SetActive(true);
+        this.lightPanel2.SetActive(true);
     }
 
     public void TurnOffLightPanel()
     {
         this.lightPanel.SetActive(false);
+        this.lightPanel2.SetActive(false);
     }
 
     public void TurnOn8Puzzle(){
