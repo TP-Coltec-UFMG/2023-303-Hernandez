@@ -3,7 +3,7 @@
 
 <h1 align="center">🤓 Menu 🤓</h1>
 
-<p align="center"> Equipe: Gabi, Iza, Smolinski, Léo, Thales, Eduardo </p>
+<p align="center"> Equipe: Gabi, Iza, Smolinski, Leo, Thales, Eduardo </p>
 
 # Menu Principal 
 
