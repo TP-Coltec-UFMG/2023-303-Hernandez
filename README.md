@@ -65,4 +65,3 @@ Puzzle com um Easter Egg da ideia original do jogo.
 ### Senha do Armário
 Para conseguir abrir esse armário, é preciso uma senha secreta encontrada em un lugar secreto.
 <p align="center"><img src="Imagens/PuzzleSenha.png" alt="Puzzle com senha"</p>
-
