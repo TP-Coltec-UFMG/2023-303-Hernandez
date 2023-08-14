@@ -12,6 +12,8 @@ public class Verifica : MonoBehaviour
     [SerializeField] private GameObject fourDigits;
     [SerializeField] private GameObject portaFechada;
     [SerializeField] private GameObject portaAberta;
+    [SerializeField] private GameObject marteloInv;
+    [SerializeField] private GameObject martelo;
     [SerializeField] private GameObject slot1;
     [SerializeField] private GameObject slot2;
     [SerializeField] private GameObject slot3;
@@ -43,4 +45,8 @@ public class Verifica : MonoBehaviour
         
     }
 
+    public void PegaMartelo(){
+        this.martelo.SetActive(false);
+        this.marteloInv.SetActive(true);
+    }
 }
