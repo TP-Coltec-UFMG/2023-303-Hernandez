@@ -7,6 +7,9 @@ public class Wires : MonoBehaviour
     Vector3 startPoint;
     Vector3 startPosition;
     [SerializeField] SpriteRenderer wireEnd;
+    [SerializeField] GameObject LightOn;
+    private bool taCerto = false;
+    private int numCabos = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +31,44 @@ public class Wires : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, .2f);
 
         foreach(Collider2D collider in colliders){
+            numCabos++;
             //Verifica se não é o próprio colisor
-            if(collider.gameObject != this.gameObject){
-            UpdateWire(collider.transform.position);
-            //retorna para impedir que o outro UpdateWire ocorra
-            return;
+            if(collider.gameObject.tag == "Wire"){
+                this.taCerto = true;
+                if(collider.gameObject != this.gameObject && numCabos <= 2){
+                    UpdateWire(collider.transform.position);
+
+                    if(collider.transform.parent.name.Equals(this.transform.parent.name))
+                    {
+                        collider.GetComponent<Wires>()?.Done();
+                        this.Done();
+
+                    } 
+                    
+
+
+                    //retorna para impedir que o outro UpdateWire ocorra
+                    return;
+                }
             }
         }
 
-        
-
+        numCabos=0;
+        this.taCerto = false;
         UpdateWire(newPosition);
     }
 
+    private void Done(){
+        this.LightOn.SetActive(true);
+        Destroy(this);
+    }
+
     private void OnMouseUp(){
-        UpdateWire(startPosition);
+
+        if(!taCerto){
+            UpdateWire(startPosition);
+        }
+
 
     }
 
