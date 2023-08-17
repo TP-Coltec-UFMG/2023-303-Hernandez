@@ -36,6 +36,8 @@ public class CursorTrail : MonoBehaviour
         // Atualizar os pontos do Line Renderer
         lineRenderer.positionCount = cursorPositions.Count;
         lineRenderer.SetPositions(cursorPositions.ToArray());
+        Color randomColor = new Color(255, 0, 0);
+        lineRenderer.material.color = randomColor;
     }
 }
 
