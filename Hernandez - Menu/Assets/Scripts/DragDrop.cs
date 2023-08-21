@@ -15,29 +15,29 @@ public class DragDrop : MonoBehaviour , IDragHandler , IEndDragHandler
     }
     public void OnEndDrag (PointerEventData eventData) 
     {
-        if  ((530 < this.transform.localPosition.y) && (this.transform.localPosition.y < 750) && (-530 < this.transform.localPosition.x) && (this.transform.localPosition.x < -320))
+        if  ((-269 < this.transform.localPosition.y) && (this.transform.localPosition.y < 489) && (-693 < this.transform.localPosition.x) && (this.transform.localPosition.x < -473))
         {
-            this.transform.localPosition = new Vector3(-420, 635, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(-583, 379, this.transform.localPosition.z);
         }
-        else if  ((530 < this.transform.localPosition.y) && (this.transform.localPosition.y < 750) && (-110 < this.transform.localPosition.x) && (this.transform.localPosition.x < 110))
+        else if  ((210 < this.transform.localPosition.y) && (this.transform.localPosition.y < 430) && (-103 < this.transform.localPosition.x) && (this.transform.localPosition.x < 117))
         {
-            this.transform.localPosition = new Vector3(0, 635, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(7, 320, this.transform.localPosition.z);
         }
-        else if  ((530 < this.transform.localPosition.y) && (this.transform.localPosition.y < 750) && (315 < this.transform.localPosition.x) && (this.transform.localPosition.x < 535))
+        else if  ((270 < this.transform.localPosition.y) && (this.transform.localPosition.y < 490) && (532 < this.transform.localPosition.x) && (this.transform.localPosition.x < 752))
         {
-            this.transform.localPosition = new Vector3(425, 635, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(642, 380, this.transform.localPosition.z);
         }
-        else if  ((200 < this.transform.localPosition.y) && (this.transform.localPosition.y < 420) && (-530 < this.transform.localPosition.x) && (this.transform.localPosition.x < -320))
+        else if  ((-549 < this.transform.localPosition.y) && (this.transform.localPosition.y < -329) && (-713 < this.transform.localPosition.x) && (this.transform.localPosition.x < -493))
         {
-            this.transform.localPosition = new Vector3(-420, 310, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(-603, -439, this.transform.localPosition.z);
         }
-        else if  ((200 < this.transform.localPosition.y) && (this.transform.localPosition.y < 420) && (-110 < this.transform.localPosition.x) && (this.transform.localPosition.x < 110))
+        else if  ((-602 < this.transform.localPosition.y) && (this.transform.localPosition.y < 382) && (-117 < this.transform.localPosition.x) && (this.transform.localPosition.x < 103))
         {
-            this.transform.localPosition = new Vector3(0, 310, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(-7, -492, this.transform.localPosition.z);
         }
-        else if  ((200 < this.transform.localPosition.y) && (this.transform.localPosition.y < 420) && (315 < this.transform.localPosition.x) && (this.transform.localPosition.x < 535))
+        else if  ((-549 < this.transform.localPosition.y) && (this.transform.localPosition.y < -329) && (507 < this.transform.localPosition.x) && (this.transform.localPosition.x < 727))
         {
-            this.transform.localPosition = new Vector3(425, 310, this.transform.localPosition.z);
+            this.transform.localPosition = new Vector3(617, -439, this.transform.localPosition.z);
         }
         else
         {
