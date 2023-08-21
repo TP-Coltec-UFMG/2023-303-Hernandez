@@ -75,7 +75,15 @@ public class AudioComputer : MonoBehaviour
     }
 
     public void ResetaMusica(){
-        this.segAtual = 0;
-        this.audio.time = segAtual;
+        if(audio.isPlaying){
+            this.segAtual = 0;
+            this.audio.time = segAtual;
+        } else {
+            this.segAtual = 0;
+            this.audio.Play();
+            this.audio.time = segAtual;
+            this.play.SetActive(false);
+            this.pause.SetActive(true);
+        }
     }
 }
