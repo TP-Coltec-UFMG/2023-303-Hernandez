@@ -15,6 +15,8 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject parede2;
     [SerializeField] private GameObject parede3;
     [SerializeField] private GameObject parede4;
+    [SerializeField] private GameObject botaoDir;
+    [SerializeField] private GameObject botaoEsq;
 
     [SerializeField] private GameObject fourDigits;
     [SerializeField] private GameObject photoFind;
@@ -115,12 +117,18 @@ public class DisplayImage : MonoBehaviour
     {
         this.photoFind.SetActive(true);
         this.buttonPhotoFind.SetActive(false);
+        this.puzzle8base.SetActive(false);
+        this.botaoDir.SetActive(false);
+        this.botaoEsq.SetActive(false);
     }
 
     public void TurnOffPhotoFind()
     {
         this.photoFind.SetActive(false);
         this.buttonPhotoFind.SetActive(true);
+        this.puzzle8base.SetActive(true);
+        this.botaoDir.SetActive(true);
+        this.botaoEsq.SetActive(true);
     }
 
     public void TurnOnLightPanel()
