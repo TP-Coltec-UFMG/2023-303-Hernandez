@@ -12,8 +12,17 @@ public class TextoComputador : MonoBehaviour
     [SerializeField] private GameObject areaDeTrabalho;
     [SerializeField] private GameObject telaDeBloqueio;
     [SerializeField] private TMP_InputField inputSenBloqueio;
+    private string senhaComputador = "1234";
+    private string senhaArquivo = "A Noite Estrelada";
     private bool ativo = false;
     private bool ehSenha = true;
+
+    void Awake()
+    {
+        if(PlayerPrefs.GetInt("areaTrabalho") == 1){
+            VerificaSenhaUser(senhaComputador);
+        }
+    }
 
     public void AbreBloco(){
         if(!ativo){
@@ -30,16 +39,17 @@ public class TextoComputador : MonoBehaviour
     }
 
     public void VerificaSenha(string senha){
-        if(senha == "A Noite Estrelada"){
+        if(senha == senhaArquivo){
             this.resposta.SetActive(true);
             this.block.SetActive(false);
         }
     }
 
     public void VerificaSenhaUser(string senha){
-        if(senha == "1234"){
+        if(senha == senhaComputador){
             this.areaDeTrabalho.SetActive(true);
             this.telaDeBloqueio.SetActive(false);
+            PlayerPrefs.SetInt("areaTrabalho", 1);
         }
     }
 
