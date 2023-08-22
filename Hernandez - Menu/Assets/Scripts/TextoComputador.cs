@@ -16,10 +16,11 @@ public class TextoComputador : MonoBehaviour
     private string senhaArquivo = "A Noite Estrelada";
     private bool ativo = false;
     private bool ehSenha = true;
+    static bool acessado = false;
 
     void Awake()
     {
-        if(PlayerPrefs.GetInt("areaTrabalho") == 1){
+        if(acessado){
             VerificaSenhaUser(senhaComputador);
         }
     }
@@ -49,7 +50,7 @@ public class TextoComputador : MonoBehaviour
         if(senha == senhaComputador){
             this.areaDeTrabalho.SetActive(true);
             this.telaDeBloqueio.SetActive(false);
-            PlayerPrefs.SetInt("areaTrabalho", 1);
+            acessado = true;
         }
     }
 
