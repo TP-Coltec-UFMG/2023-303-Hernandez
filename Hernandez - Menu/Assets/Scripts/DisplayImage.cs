@@ -39,7 +39,7 @@ public class DisplayImage : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         if(currentWall == 1) {
-            curren
+            currentWall--;
             changeWall(true);
         }
     }
