@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DisplayImage : MonoBehaviour
 {
-    [SerializeField] private int currentWall;
+    static int currentWall = 0;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject quadroMC;
     private SpriteRenderer sprite;
@@ -24,6 +24,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject lightPanel;
     [SerializeField] private GameObject lightPanel2;
     [SerializeField] private GameObject lightPanelBase;
+    [SerializeField] private GameObject lightPanelButton;
     [SerializeField] private GameObject puzzle8;
     [SerializeField] private GameObject puzzle8base;
     [SerializeField] private GameObject buttonTV;
@@ -37,6 +38,10 @@ public class DisplayImage : MonoBehaviour
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        if(currentWall == 1) {
+            currentWall
+            changeWall(true);
+        }
     }
 
     private void Update()
@@ -118,8 +123,12 @@ public class DisplayImage : MonoBehaviour
         this.photoFind.SetActive(true);
         this.buttonPhotoFind.SetActive(false);
         this.puzzle8base.SetActive(false);
+        this.lightPanelBase.SetActive(false);
         this.botaoDir.SetActive(false);
         this.botaoEsq.SetActive(false);
+        this.lightPanel.SetActive(false);
+        this.lightPanel2.SetActive(false);
+        this.lightPanelButton.SetActive(false);
     }
 
     public void TurnOffPhotoFind()
@@ -129,6 +138,8 @@ public class DisplayImage : MonoBehaviour
         this.puzzle8base.SetActive(true);
         this.botaoDir.SetActive(true);
         this.botaoEsq.SetActive(true);
+        this.lightPanelBase.SetActive(true);
+        this.lightPanelButton.SetActive(true);
     }
 
     public void TurnOnLightPanel()
