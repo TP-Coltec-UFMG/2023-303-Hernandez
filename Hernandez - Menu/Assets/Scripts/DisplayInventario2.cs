@@ -7,6 +7,7 @@ public class DisplayInventario2 : MonoBehaviour
     private bool estaAparecendo = true;
     [SerializeField] GameObject inventario;
     [SerializeField] GameObject butao;
+    [SerializeField] GameObject seta;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +22,22 @@ public class DisplayInventario2 : MonoBehaviour
 
     public void ApareceInventario(){
 
+        Vector3 temp = this.seta.transform.localScale;
 
         if(estaAparecendo){
-            // while(inventario.GetComponent<RectTransform>().anchoredPosition.y > -56){
-            //     inventario.transform.position = Vector2.MoveTowards(inventario.transform.position, new Vector2(0, -56), 2.0f * Time.deltaTime);
             
             this.StartCoroutine(SmoothMove(new Vector3(inventario.transform.position.x, inventario.transform.position.y - (Screen.height / 8), 0), 0.1f));
             estaAparecendo = false;
 
+            temp.y *= -1;
+            this.seta.transform.localScale = temp;
+
         } else{
             this.StartCoroutine(SmoothMove(new Vector3(inventario.transform.position.x, inventario.transform.position.y + (Screen.height / 8), 0), 0.1f));
             estaAparecendo = true;
+
+            temp.y *= -1;
+            this.seta.transform.localScale = temp;
 
         }
     }
