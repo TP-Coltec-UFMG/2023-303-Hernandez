@@ -22,6 +22,8 @@ public class Verifica : MonoBehaviour
     [SerializeField] private GameObject slot6;
     [SerializeField] private GameObject photoFind;
 
+    [SerializeField] private DisplayImage displayImage;
+
     public void Update(){
         VerificaDigit4();
         VerificaPhotoFind();
@@ -40,7 +42,7 @@ public class Verifica : MonoBehaviour
     {
         if((slot1.transform.localPosition == new Vector3(-583, 379, slot1.transform.localPosition.z)) && (slot2.transform.localPosition == new Vector3(7, 320, slot2.transform.localPosition.z)) && (slot3.transform.localPosition == new Vector3(642, 380, slot3.transform.localPosition.z)) && (slot4.transform.localPosition == new Vector3(-603, -439, slot4.transform.localPosition.z)) && (slot5.transform.localPosition == new Vector3(-7, -492, slot5.transform.localPosition.z)) && (slot6.transform.localPosition == new Vector3(617, -439, slot6.transform.localPosition.z)))
         {
-            this.photoFind.SetActive(false);
+            this.displayImage.TurnOffPhotoFind();
         }
        
     }
