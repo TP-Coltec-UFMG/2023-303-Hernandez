@@ -67,6 +67,12 @@ public class DisplayImage : MonoBehaviour
 
     public void changeWall(bool dir)
     {
+       StartCoroutine(fadeWallChanger(0.105f, dir));
+    }
+
+    IEnumerator fadeWallChanger(float timeWait, bool dir)
+    {
+        yield return new WaitForSeconds(timeWait);
         if (dir) currentWall++;
         else currentWall--;
 
@@ -89,7 +95,6 @@ public class DisplayImage : MonoBehaviour
                 this.EnableWall4();
                 break;
         }
-
     }
 
 
