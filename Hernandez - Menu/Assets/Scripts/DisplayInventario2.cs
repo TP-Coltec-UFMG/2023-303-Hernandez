@@ -22,6 +22,7 @@ public class DisplayInventario2 : MonoBehaviour
 
     public void ApareceInventario(){
 
+
         Vector3 temp = this.seta.transform.localScale;
 
         if(estaAparecendo){

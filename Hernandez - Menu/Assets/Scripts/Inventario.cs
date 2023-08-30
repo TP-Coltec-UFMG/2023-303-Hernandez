@@ -37,9 +37,6 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                     break;
             }
 
-            this.transform.position = startingPoint;
-            useText.SetActive(false);
-
         }
         activeDrag = false;
     }

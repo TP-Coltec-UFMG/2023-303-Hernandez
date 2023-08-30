@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,7 +67,6 @@ public class DisplayImage : MonoBehaviour
 
     public void changeWall(bool dir)
     {
-
         if (dir) currentWall++;
         else currentWall--;
 
