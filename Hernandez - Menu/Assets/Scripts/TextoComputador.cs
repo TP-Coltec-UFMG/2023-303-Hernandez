@@ -40,7 +40,7 @@ public class TextoComputador : MonoBehaviour
     }
 
     public void VerificaSenha(string senha){
-        if(senha.ToLower() == senhaArquivo.ToLower()){
+        if(senha == senhaArquivo){
             this.resposta.SetActive(true);
             this.block.SetActive(false);
         }
