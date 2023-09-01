@@ -29,7 +29,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         activeDrag = false;
         UnityEngine.Debug.Log(onTop);
-        if (onTop)
+        if (onTop){
             switch (itemNumber)
             {
                 case 5:
@@ -38,8 +38,8 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                     this.gameOver.SetActive(true);
                     break;
             }
-        this.transform.position = startingPoint;
 
+        }
     }
 
     public void DisplayText(bool active)
