@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class Wires : MonoBehaviour
 {
+    static int fiosCertos = 0;
     Vector3 startPoint;
     Vector3 startPosition;
     [SerializeField] SpriteRenderer wireEnd;
     private bool taCerto = false;
-    private int fiosCertos = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
         startPoint = transform.parent.position;
         startPosition = this.transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(fiosCertos == 4){
+            //Se o jogador acertou as todos os fios: espera 0.5 segundos e destroi o script
+            Debug.Log("FUNCIONOU!");
+            Invoke("Destruir", 0.5f );
+        } else{
+            CancelInvoke("Destruir");
+        }
+    }
 
+    private void Destruir(){
+        //ultimos suspiros do script
+        Destroy(this);
     }
 
     private void OnMouseDrag(){
@@ -31,10 +44,11 @@ public class Wires : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, .2f);
 
         foreach(Collider2D collider in colliders){
-            //Verifica se não é o próprio colisor
+
             if(collider.gameObject.tag == "Wire"){
                 this.taCerto = true;
                 if(collider.gameObject != this.gameObject){
+
                     UpdateWire(collider.transform.position);
 
                     if(collider.transform.parent.name.Equals(this.transform.parent.name))
@@ -48,23 +62,25 @@ public class Wires : MonoBehaviour
                     return;
                 }
             }
+            this.taCerto = false;
+            UpdateWire(newPosition);
         }
-        
-        this.taCerto = false;
-        UpdateWire(newPosition);
+
     }
 
-    void OnCollisionEnter(Collision collision){
-        if(collision.transform.parent.name.Equals(this.transform.parent.name)){
+    void OnTriggerEnter2D(Collider2D collider){
+
+        Debug.Log(collider.gameObject.transform.parent.name);
+        Debug.Log(this.transform.parent.name);
+        if(collider.gameObject.transform.parent.name.Equals(this.transform.parent.name)){
             fiosCertos++;
-            Debug.Log(fiosCertos);
+
         }
     }
 
-    void OnCollisionExit(Collision collision){
-        if(collision.transform.parent.name.Equals(this.transform.parent.name)){
+    void OnTriggerExit2D(Collider2D collider){
+        if(collider.gameObject.transform.parent.name.Equals(this.transform.parent.name)){
             fiosCertos--;
-            Debug.Log(fiosCertos);
         }
     }
 
@@ -84,8 +100,8 @@ public class Wires : MonoBehaviour
         Vector3 direction = newPosition - startPoint;
         this.transform.right = direction * transform.lossyScale.x;
 
-        float dist = Vector2.Distance(startPoint, newPosition);
-        wireEnd.size = new Vector2((dist+0.1f), wireEnd.size.y);
+        float dist = Vector2.Distance(newPosition, startPoint);
+        wireEnd.size = new Vector2((dist), wireEnd.size.y);
     }
 
 }

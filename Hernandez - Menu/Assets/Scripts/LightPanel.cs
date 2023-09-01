@@ -1,10 +1,12 @@
-using System.Diagnostics;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightPanel : MonoBehaviour
 {
+    public int verifica;
+    private bool taCerto = false;
     [SerializeField] private theLightSwitch lightSwitch_1;
     [SerializeField] private theLightSwitch lightSwitch_2;
     [SerializeField] private theLightSwitch lightSwitch_3;
@@ -20,7 +22,18 @@ public class LightPanel : MonoBehaviour
     {
         if ((lightSwitch_1.isOn == true) && (lightSwitch_2.isOn == true) && (lightSwitch_3.isOn == true) && (lightSwitch_4.isOn == true) && (lightSwitch_5.isOn == true))
         {
+            if(!taCerto){
+                taCerto = true;
+                this.verifica++;
+                Debug.Log(verifica);
+            }
             return true;
+        }
+        //Caso os switchs não estejam mais ligados :(
+        if(taCerto){
+            taCerto = false;
+            this.verifica--;
+            Debug.Log(verifica);
         }
         return false;
     }
