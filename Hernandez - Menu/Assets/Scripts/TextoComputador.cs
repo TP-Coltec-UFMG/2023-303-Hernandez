@@ -16,7 +16,7 @@ public class TextoComputador : MonoBehaviour
     private string senhaArquivo = "A Noite Estrelada";
     private bool ativo = false;
     private bool ehSenha = true;
-    static bool acessado = false;
+    private bool acessado = false;
 
     void Awake()
     {
@@ -40,7 +40,7 @@ public class TextoComputador : MonoBehaviour
     }
 
     public void VerificaSenha(string senha){
-        if(senha.ToLower() == senhaArquivo.ToLower()){
+        if(senha == senhaArquivo){
             this.resposta.SetActive(true);
             this.block.SetActive(false);
         }

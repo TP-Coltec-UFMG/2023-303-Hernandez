@@ -33,9 +33,13 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject TV;
     [SerializeField] private GameObject closeTV;
     [SerializeField] private GameObject painelTV;
+    [SerializeField] private GameObject computador;
+    [SerializeField] private GameObject HUD;
 
 
     [SerializeField] private Puzzle8 the_puzzle;
+
+    private bool ehComputador = false;
 
     private void Start()
     {
@@ -48,11 +52,11 @@ public class DisplayImage : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !ehComputador)
         {
             changeWall(true);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && !ehComputador)
         {
             changeWall(false);
         }
@@ -170,10 +174,18 @@ public class DisplayImage : MonoBehaviour
 
     public void ComputerScene()
     {
-        SceneManager.LoadScene("Computer");
+        this.HUD.SetActive(false);
+        this.computador.SetActive(true);
+        this.ehComputador = true;
+        mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 11, mainCamera.transform.position.z);
     }
 
-
+    public void RoomScene(){
+        this.HUD.SetActive(true);
+        this.computador.SetActive(false);
+        this.ehComputador = false;
+        mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z);
+    }
 
     //Desabilitar paredes
     private void DisableWall1()
