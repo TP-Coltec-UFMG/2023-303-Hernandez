@@ -14,6 +14,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
 
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
+    public bool onTop = false;
 
     private void Start()
     {
@@ -26,8 +27,9 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (activeDrag)
-        {
+        activeDrag = false;
+        UnityEngine.Debug.Log(onTop);
+        if (onTop)
             switch (itemNumber)
             {
                 case 5:
@@ -36,11 +38,8 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                     this.gameOver.SetActive(true);
                     break;
             }
+        this.transform.position = startingPoint;
 
-        } else{
-            this.transform.position = startingPoint;
-        }
-        activeDrag = false;
     }
 
     public void DisplayText(bool active)

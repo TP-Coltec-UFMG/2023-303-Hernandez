@@ -67,7 +67,7 @@ public class DisplayImage : MonoBehaviour
 
     public void changeWall(bool dir)
     {
-       StartCoroutine(fadeWallChanger(0.105f, dir));
+       StartCoroutine(fadeWallChanger(0.095f, dir));
     }
 
     IEnumerator fadeWallChanger(float timeWait, bool dir)
