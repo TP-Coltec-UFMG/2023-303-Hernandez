@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayInventario : MonoBehaviour
+public class Displayinventario : MonoBehaviour
 {
     private bool estaAparecendo = true;
     [SerializeField] GameObject inventario;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayItemText : MonoBehaviour
+public class DisplayItemtext : MonoBehaviour
 {
     [SerializeField] Inventario item;
     [SerializeField] Inventario itemFalso;
@@ -34,3 +34,4 @@ public class DisplayItemText : MonoBehaviour
     }
 
 }
+
