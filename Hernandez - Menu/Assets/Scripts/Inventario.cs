@@ -39,7 +39,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                     break;
             }
 
-        }
+        } else this.transform.position = startingPoint;
     }
 
     public void DisplayText(bool active)
