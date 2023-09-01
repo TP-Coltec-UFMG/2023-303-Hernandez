@@ -5,10 +5,12 @@ using UnityEngine;
 public class Wires : MonoBehaviour
 {
     static int fiosCertos = 0;
+    static bool jaVerificou = false;
     Vector3 startPoint;
     Vector3 startPosition;
     [SerializeField] SpriteRenderer wireEnd;
     private bool taCerto = false;
+    public LightPanel lightPanel;
 
 
     // Start is called before the first frame update
@@ -33,6 +35,12 @@ public class Wires : MonoBehaviour
 
     private void Destruir(){
         //ultimos suspiros do script
+        if(!jaVerificou){
+            lightPanel.verifica++;
+            jaVerificou = true;
+        }
+
+        Debug.Log(lightPanel.verifica);
         Destroy(this);
     }
 
@@ -70,8 +78,6 @@ public class Wires : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider){
 
-        Debug.Log(collider.gameObject.transform.parent.name);
-        Debug.Log(this.transform.parent.name);
         if(collider.gameObject.transform.parent.name.Equals(this.transform.parent.name)){
             fiosCertos++;
 
@@ -90,7 +96,6 @@ public class Wires : MonoBehaviour
         if(!taCerto){
             UpdateWire(startPosition);
         }
-
 
     }
 
