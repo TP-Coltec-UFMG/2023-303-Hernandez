@@ -12,6 +12,10 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject inventarioBase;
     [SerializeField] private GameObject leCanvas;
     [SerializeField] private GameObject luzNegra;
+    [SerializeField] private GameObject canalCerto;
+    [SerializeField] private GameObject tvCrack;
+    [SerializeField] private GameObject tvChanels;
+    [SerializeField] private GameObject UVCollider;
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
     public bool onTop = false;
@@ -33,6 +37,14 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
         if (onTop){
             switch (itemNumber)
             {
+                case 2:
+                this.tvCrack.SetActive(true);
+                this.canalCerto.SetActive(false);
+                
+                this.tvChanels.SetActive(false);
+                this.UVCollider.SetActive(true);
+                break;
+
                 case 3:
                     this.luzNegra.SetActive(true);
                     this.gameObject.SetActive(false);
@@ -46,7 +58,8 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                 break;
             }
 
-        } else this.transform.position = startingPoint;
+        }
+        this.transform.position = startingPoint;
     }
 
     public void DisplayText(bool active)

@@ -39,9 +39,9 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject postit;
     [SerializeField] private GameObject inversePostit;
     [SerializeField] private GameObject closePostit;
-
-
-
+    [SerializeField] private GameObject luzNaTV;
+    [SerializeField] private GameObject luzUV;
+    [SerializeField] private GameObject luzCollider;
     [SerializeField] private Puzzle8 the_puzzle;
 
     private bool ehComputador = false;
@@ -197,6 +197,12 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOff8Puzzle(){
         this.puzzle8.SetActive(false);
+    }
+
+    public void GetUVLight(){
+        this.luzNaTV.SetActive(false);
+        this.luzUV.SetActive(true);
+        this.luzCollider.SetActive(false);
     }
 
     public void ComputerScene()

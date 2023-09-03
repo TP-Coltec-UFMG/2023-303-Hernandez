@@ -10,6 +10,7 @@ public class TvChannels : MonoBehaviour
     [SerializeField] DisplayImage displayImage;
     [SerializeField] GameObject tvCrash;
     [SerializeField] GameObject secret;
+    [SerializeField] GameObject tvNiver;
     private float redRotation;
     private float blueRotation;
 
@@ -23,6 +24,7 @@ public class TvChannels : MonoBehaviour
             this.displayImage.TurnOffTV();
             this.tvCrash.SetActive(false);
             this.secret.SetActive(false);
+            this.tvNiver.SetActive(true);
             //ativa o gif certo
             Debug.Log("parabuains");
    
