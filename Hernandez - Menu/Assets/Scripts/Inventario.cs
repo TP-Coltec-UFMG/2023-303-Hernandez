@@ -11,7 +11,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject inventarioBase;
     [SerializeField] private GameObject leCanvas;
-
+    [SerializeField] private GameObject luzNegra;
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
     public bool onTop = false;
@@ -32,11 +32,16 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
         if (onTop){
             switch (itemNumber)
             {
+                case 3:
+                    this.luzNegra.SetActive(true);
+                    this.gameObject.SetActive(false);
+                break;
+
                 case 5:
                     this.inventarioBase.SetActive(false);
                     this.leCanvas.SetActive(false);
                     this.gameOver.SetActive(true);
-                    break;
+                break;
             }
 
         } else this.transform.position = startingPoint;
