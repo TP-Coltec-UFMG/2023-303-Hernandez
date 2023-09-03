@@ -15,6 +15,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
     public bool onTop = false;
+    public bool luzTaLigada = false;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                 case 3:
                     this.luzNegra.SetActive(true);
                     this.gameObject.SetActive(false);
+                    this.luzTaLigada = true;
                 break;
 
                 case 5:
