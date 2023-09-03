@@ -35,6 +35,11 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject painelTV;
     [SerializeField] private GameObject computador;
     [SerializeField] private GameObject HUD;
+    [SerializeField] private Inventario Inventario;
+    [SerializeField] private GameObject postit;
+    [SerializeField] private GameObject inversePostit;
+    [SerializeField] private GameObject closePostit;
+
 
 
     [SerializeField] private Puzzle8 the_puzzle;
@@ -118,6 +123,28 @@ public class DisplayImage : MonoBehaviour
         this.closeTV.SetActive(false);
         this.painelTV.SetActive(false);
     }
+
+    public void TurnOnPostits(){
+
+        if(!this.Inventario.luzTaLigada){
+            this.postit.SetActive(true);
+        } else{
+            this.inversePostit.SetActive(true);
+        }
+
+        this.closePostit.SetActive(true);
+    }
+
+    public void TurnOffPostits(){
+        this.postit.SetActive(false);
+        this.inversePostit.SetActive(false);
+        this.closePostit.SetActive(false);
+
+    }
+
+
+
+
     public void TurnOnDigit4()
     {
         this.fourDigits.SetActive(true);
