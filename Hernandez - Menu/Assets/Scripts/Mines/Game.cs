@@ -40,7 +40,6 @@ public class Game : MonoBehaviour
         GenerateMines();
         GenerateNumbers();
 
-        Camera.main.transform.position = new Vector3(width / 2f, height / 2f, -10f);
         board.Draw(state);
     }
 
