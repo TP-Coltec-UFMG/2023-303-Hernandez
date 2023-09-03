@@ -16,6 +16,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject tvCrack;
     [SerializeField] private GameObject tvChanels;
     [SerializeField] private GameObject UVCollider;
+    [SerializeField] GameObject tvNiverButton;
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
     public bool onTop = false;
@@ -40,7 +41,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                 case 2:
                 this.tvCrack.SetActive(true);
                 this.canalCerto.SetActive(false);
-                
+                this.tvNiverButton.SetActive(false);
                 this.tvChanels.SetActive(false);
                 this.UVCollider.SetActive(true);
                 break;
