@@ -31,6 +31,7 @@ public class Puzzle8 : MonoBehaviour
 
             if(Confere()){
                 Debug.Log("Deu bom");
+                Actions.OnStoryAdvanced(0);
             }
         }
     }
