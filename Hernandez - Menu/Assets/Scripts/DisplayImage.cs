@@ -46,6 +46,11 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject niverTVBase;
     [SerializeField] private GameObject closeNiverTVBase;
     [SerializeField] private GameObject openNiverTVBase;
+    [SerializeField] private GameObject garfoBase;
+    [SerializeField] private GameObject garfoSprite;
+    [SerializeField] private GameObject garfoInventario;
+    [SerializeField] private GameObject garfoOpen;
+    [SerializeField] private GameObject almofada;
 
     private bool ehComputador = false;
 
@@ -155,6 +160,29 @@ public class DisplayImage : MonoBehaviour
     {
         this.niverTVBase.SetActive(false);
         this.closeNiverTVBase.SetActive(false);
+    }
+
+    public void TurnOnGarfo()
+    {
+        this.garfoBase.SetActive(true);
+        this.almofada.SetActive(false);
+        this.garfoOpen.SetActive(false);
+    }
+
+    public void TurnOffGarfo()
+    {
+        this.garfoBase.SetActive(false);
+        this.almofada.SetActive(true);
+        this.garfoOpen.SetActive(true);
+    }
+
+    public void GetGarfo()
+    {
+        this.garfoBase.SetActive(false);
+        this.almofada.SetActive(true);
+        this.garfoInventario.SetActive(true);
+        this.garfoSprite.SetActive(false);
+        this.garfoOpen.SetActive(false);
     }
 
 
