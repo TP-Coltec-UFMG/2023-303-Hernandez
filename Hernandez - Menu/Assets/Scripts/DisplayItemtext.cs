@@ -29,6 +29,7 @@ public class DisplayItemtext : MonoBehaviour
     }
     private void OnMouseExit()
     {
+        item.onTop = false;
         item.DisplayText(false);
         itemFalso.DisplayText(false);
     }
