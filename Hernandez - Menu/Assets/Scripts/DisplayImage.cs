@@ -39,10 +39,13 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject postit;
     [SerializeField] private GameObject inversePostit;
     [SerializeField] private GameObject closePostit;
-
-
-
+    [SerializeField] private GameObject luzNaTV;
+    [SerializeField] private GameObject luzUV;
+    [SerializeField] private GameObject luzCollider;
     [SerializeField] private Puzzle8 the_puzzle;
+    [SerializeField] private GameObject niverTVBase;
+    [SerializeField] private GameObject closeNiverTVBase;
+    [SerializeField] private GameObject openNiverTVBase;
 
     private bool ehComputador = false;
 
@@ -142,17 +145,29 @@ public class DisplayImage : MonoBehaviour
 
     }
 
+    public void TurnOnNiver()
+    {
+        this.niverTVBase.SetActive(true);
+        this.closeNiverTVBase.SetActive(true);
+    }
 
+    public void TurnOffNiver()
+    {
+        this.niverTVBase.SetActive(false);
+        this.closeNiverTVBase.SetActive(false);
+    }
 
 
     public void TurnOnDigit4()
     {
         this.fourDigits.SetActive(true);
+        this.openNiverTVBase.SetActive(false);
     }
 
     public void TurnOffDigit4()
     {
         this.fourDigits.SetActive(false);
+        this.openNiverTVBase.SetActive(true);
     }
 
     public void TurnOnPhotoFind()
@@ -197,6 +212,12 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOff8Puzzle(){
         this.puzzle8.SetActive(false);
+    }
+
+    public void GetUVLight(){
+        this.luzNaTV.SetActive(false);
+        this.luzUV.SetActive(true);
+        this.luzCollider.SetActive(false);
     }
 
     public void ComputerScene()
