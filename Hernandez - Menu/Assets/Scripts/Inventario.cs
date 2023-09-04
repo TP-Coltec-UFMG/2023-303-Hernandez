@@ -44,12 +44,14 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                 this.tvNiverButton.SetActive(false);
                 this.tvChanels.SetActive(false);
                 this.UVCollider.SetActive(true);
+                Actions.OnStoryAdvanced(4);
                 break;
 
                 case 3:
                     this.luzNegra.SetActive(true);
                     this.gameObject.SetActive(false);
                     this.luzTaLigada = true;
+                    Actions.OnStoryAdvanced(5);
                 break;
 
                 case 5:
