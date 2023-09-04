@@ -37,6 +37,7 @@ public class Verifica : MonoBehaviour
             this.fourDigits.SetActive(false);
             this.portaFechada.SetActive(false);
             this.portaAberta.SetActive(true);
+            Actions.OnStoryAdvanced(3);
         }
     }
 
@@ -47,6 +48,7 @@ public class Verifica : MonoBehaviour
             this.displayImage.TurnOffPhotoFind();
             this.cabeceiraAntes.SetActive(false);
             this.cabeceiraDepois.SetActive(true);
+            Actions.OnStoryAdvanced(8);
         }
        
     }

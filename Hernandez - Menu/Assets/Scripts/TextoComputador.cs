@@ -43,6 +43,7 @@ public class TextoComputador : MonoBehaviour
         if(senha == senhaArquivo){
             this.resposta.SetActive(true);
             this.block.SetActive(false);
+            Actions.OnStoryAdvanced(7);
         }
     }
 
@@ -51,6 +52,7 @@ public class TextoComputador : MonoBehaviour
             this.areaDeTrabalho.SetActive(true);
             this.telaDeBloqueio.SetActive(false);
             acessado = true;
+            Actions.OnStoryAdvanced(6);
         }
     }
 

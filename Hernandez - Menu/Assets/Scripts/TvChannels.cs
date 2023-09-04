@@ -25,9 +25,11 @@ public class TvChannels : MonoBehaviour
             this.displayImage.TurnOffTV();
             this.tvCrash.SetActive(false);
             this.secret.SetActive(false);
+
+            //ativa o gif certo
             this.tvNiver.SetActive(true);
             this.tvNiverButton.SetActive(true);
-            //ativa o gif certo
+            Actions.OnStoryAdvanced(2);
             Debug.Log("parabuains");
    
         } else if((blueRotation > 355 || blueRotation < 5 || blueRotation > 175 && blueRotation < 185)&&(redRotation > 220 && redRotation < 230 || redRotation > 40 && redRotation < 50)){
