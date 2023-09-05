@@ -30,7 +30,6 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject lightPanelButton;
     [SerializeField] private GameObject puzzle8;
     [SerializeField] private GameObject puzzle8base;
-    [SerializeField] private GameObject buttonTV;
     [SerializeField] private GameObject TV;
     [SerializeField] private GameObject closeTV;
     [SerializeField] private GameObject painelTV;
@@ -46,13 +45,13 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private Puzzle8 the_puzzle;
     [SerializeField] private GameObject niverTVBase;
     [SerializeField] private GameObject closeNiverTVBase;
-    [SerializeField] private GameObject openNiverTVBase;
     [SerializeField] private GameObject garfoBase;
     [SerializeField] private GameObject garfoSprite;
     [SerializeField] private GameObject garfoInventario;
     [SerializeField] private GameObject garfoOpen;
     [SerializeField] private GameObject almofada;
     [SerializeField] private GameObject ModoAjuda;
+    [SerializeField] private GameObject botoesP1;
 
 
     private bool ehComputador = false;
@@ -161,7 +160,7 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOnTV()
     {
-        this.buttonTV.SetActive(false);
+        this.botoesP1.SetActive(false);
         this.TV.SetActive(false);
         this.closeTV.SetActive(true);
         this.painelTV.SetActive(true);
@@ -169,7 +168,7 @@ public class DisplayImage : MonoBehaviour
 
     public void TurnOffTV()
     {
-        this.buttonTV.SetActive(true);
+        this.botoesP1.SetActive(true);
         this.TV.SetActive(true);
         this.closeTV.SetActive(false);
         this.painelTV.SetActive(false);
@@ -232,13 +231,13 @@ public class DisplayImage : MonoBehaviour
     public void TurnOnDigit4()
     {
         this.fourDigits.SetActive(true);
-        this.openNiverTVBase.SetActive(false);
+        this.botoesP1.SetActive(false);
     }
 
     public void TurnOffDigit4()
     {
         this.fourDigits.SetActive(false);
-        this.openNiverTVBase.SetActive(true);
+        this.botoesP1.SetActive(true);
     }
 
     public void TurnOnPhotoFind()
