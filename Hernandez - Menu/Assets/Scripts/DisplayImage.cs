@@ -54,6 +54,8 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject botoesP1;
     [SerializeField] private GameObject botoesP3;
     [SerializeField] private GameObject quadro;
+    [SerializeField] private GameObject luzVerd;
+    [SerializeField] private GameObject luzVerm;
 
 
 
@@ -286,12 +288,15 @@ public class DisplayImage : MonoBehaviour
     {
         this.lightPanel.SetActive(true);
         this.lightPanel2.SetActive(true);
+        this.luzVerd.SetActive(false);
+        this.luzVerm.SetActive(false);
     }
-
     public void TurnOffLightPanel()
     {
         this.lightPanel.SetActive(false);
         this.lightPanel2.SetActive(false);
+        this.luzVerd.SetActive(true);
+        this.luzVerm.SetActive(true);
     }
 
     public void TurnOn8Puzzle(){
