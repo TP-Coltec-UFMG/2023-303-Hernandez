@@ -69,4 +69,11 @@ public class Puzzle8 : MonoBehaviour
         else if (iBlank % 3 == 1) return 0;
         else return 400;
     }
+
+    public void Skip(){
+        for(int i = 0; i < 9; i++){
+            positions[i] = reference[i];
+        }
+        Actions.OnStoryAdvanced(0);
+    }
 }
