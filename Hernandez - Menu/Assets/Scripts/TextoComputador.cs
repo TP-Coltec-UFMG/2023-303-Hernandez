@@ -12,7 +12,7 @@ public class TextoComputador : MonoBehaviour
     [SerializeField] private GameObject areaDeTrabalho;
     [SerializeField] private GameObject telaDeBloqueio;
     [SerializeField] private TMP_InputField inputSenBloqueio;
-    private string senhaComputador = "1234";
+    private string senhaComputador = "linguiça";
     private string senhaArquivo = "A Noite Estrelada";
     private bool ativo = false;
     private bool ehSenha = true;
