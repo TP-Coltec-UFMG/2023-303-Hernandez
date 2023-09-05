@@ -57,6 +57,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject luzVerd;
     [SerializeField] private GameObject luzVerm;
     [SerializeField] private MouseControl mouseControl;
+    [SerializeField] private GameObject panelCadeado;
 
 
 
@@ -211,6 +212,14 @@ public class DisplayImage : MonoBehaviour
         this.inversePostit.SetActive(false);
         this.closePostit.SetActive(false);
 
+    }
+
+    public void TurnOnPanelCadeado(){
+        this.panelCadeado.SetActive(true); 
+    }
+
+    public void TurnOffPanelCadeado(){
+        this.panelCadeado.SetActive(false); 
     }
 
     public void TurnOnNiver()
