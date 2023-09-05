@@ -52,6 +52,9 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject almofada;
     [SerializeField] private GameObject ModoAjuda;
     [SerializeField] private GameObject botoesP1;
+    [SerializeField] private GameObject botoesP3;
+    [SerializeField] private GameObject quadro;
+
 
 
     private bool ehComputador = false;
@@ -119,20 +122,35 @@ public class DisplayImage : MonoBehaviour
 
     //Desabilitar Puzzles ///
 
+    public void TurnOnQuadro(){
+
+
+        this.quadro.SetActive(true);
+        this.botoesP3.SetActive(false);
+        
+    }
+
+    public void TurnOffQuadro(){
+
+        this.quadro.SetActive(false);
+        this.botoesP3.SetActive(true);
+        
+    }
+
     public void TurnOnOffModoAjuda(){
 
         if(!ModoAjudaOn){
                 this.ModoAjuda.SetActive(true);
                 this.parede1.SetActive(false);
                 this.parede2.SetActive(false);
-                this.garfoOpen.SetActive(false);
+                this.botoesP3.SetActive(false);
                 this.parede4.SetActive(false);
                 this.botaoDir.SetActive(false);
                 this.botaoEsq.SetActive(false);
                 this.ModoAjudaOn = true;
         } else{
             this.ModoAjuda.SetActive(false);
-            this.garfoOpen.SetActive(true);
+            this.botoesP3.SetActive(true);
             this.botaoDir.SetActive(true);
             this.botaoEsq.SetActive(true);
             this.ModoAjudaOn = false;
@@ -207,21 +225,21 @@ public class DisplayImage : MonoBehaviour
     public void TurnOnGarfo()
     {
         this.garfoBase.SetActive(true);
-        this.almofada.SetActive(false);
+        this.botoesP3.SetActive(false);
         this.garfoOpen.SetActive(false);
     }
 
     public void TurnOffGarfo()
     {
         this.garfoBase.SetActive(false);
-        this.almofada.SetActive(true);
+        this.botoesP3.SetActive(true);
         this.garfoOpen.SetActive(true);
     }
 
     public void GetGarfo()
     {
         this.garfoBase.SetActive(false);
-        this.almofada.SetActive(true);
+        this.botoesP3.SetActive(true);
         this.garfoInventario.SetActive(true);
         this.garfoSprite.SetActive(false);
         this.garfoOpen.SetActive(false);
