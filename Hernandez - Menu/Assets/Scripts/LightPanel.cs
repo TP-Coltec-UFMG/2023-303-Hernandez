@@ -18,7 +18,7 @@ public class LightPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(verifica == 2){
+        if(verifica == 3){
             Actions.OnStoryAdvanced(1);
             this.luz.SetActive(false);
             this.tvCrash.SetActive(true);

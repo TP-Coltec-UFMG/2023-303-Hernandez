@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private Vector3 startingPoint;
+    [SerializeField] private LightPanel lightPanel;
     [SerializeField] private GameObject useText;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject inventarioBase;
@@ -17,6 +18,8 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject tvChanels;
     [SerializeField] private GameObject UVCollider;
     [SerializeField] private GameObject restart;
+    [SerializeField] private GameObject fusivelQuebrado;
+    [SerializeField] private GameObject fusivelInteiro;
     [SerializeField] GameObject tvNiverButton;
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
@@ -39,6 +42,12 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
         if (onTop){
             switch (itemNumber)
             {
+                case 1:
+                this.fusivelQuebrado.SetActive(false);
+                 this.fusivelInteiro.SetActive(true);
+                this.lightPanel.verifica++;
+                this.gameObject.SetActive(false);
+                break;
                 case 2:
                 this.tvCrack.SetActive(true);
                 this.canalCerto.SetActive(false);
