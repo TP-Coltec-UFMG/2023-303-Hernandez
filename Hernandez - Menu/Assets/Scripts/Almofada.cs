@@ -13,12 +13,15 @@ public class Almofada : MonoBehaviour
         if(!clicado) {
             if(aindaExiste) fusivel.SetActive(true);
             this.transform.localScale = new Vector3(-1, 1, 1);
+
             this.transform.position = new Vector2(this.transform.position.x + 200, this.transform.position.y);
+
             this.clicado = true;
         }
         else{
             fusivel.SetActive(false);
             this.transform.localScale = new Vector3(1, 1, 1);
+
             this.transform.position = new Vector2(this.transform.position.x - 200, this.transform.position.y);
             this.clicado = false;
         }
