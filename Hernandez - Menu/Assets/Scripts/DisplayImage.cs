@@ -12,6 +12,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject quadroMC;
     private SpriteRenderer sprite;
+    private bool ModoAjudaOn = false;
 
     [SerializeField] private GameObject parede1;
     [SerializeField] private GameObject parede2;
@@ -51,6 +52,8 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject garfoInventario;
     [SerializeField] private GameObject garfoOpen;
     [SerializeField] private GameObject almofada;
+    [SerializeField] private GameObject ModoAjuda;
+
 
     private bool ehComputador = false;
 
@@ -116,6 +119,46 @@ public class DisplayImage : MonoBehaviour
 
 
     //Desabilitar Puzzles ///
+
+    public void TurnOnOffModoAjuda(){
+
+        if(!ModoAjudaOn){
+                this.ModoAjuda.SetActive(true);
+                this.parede1.SetActive(false);
+                this.parede2.SetActive(false);
+                this.garfoOpen.SetActive(false);
+                this.parede4.SetActive(false);
+                this.botaoDir.SetActive(false);
+                this.botaoEsq.SetActive(false);
+                this.ModoAjudaOn = true;
+        } else{
+            this.ModoAjuda.SetActive(false);
+            this.garfoOpen.SetActive(true);
+            this.botaoDir.SetActive(true);
+            this.botaoEsq.SetActive(true);
+            this.ModoAjudaOn = false;
+
+            switch(currentWall){
+                case 0:
+                    this.parede1.SetActive(true);
+                    break;
+                case 1:
+                    this.parede2.SetActive(true);
+                    break;
+                case 2:
+                    this.parede3.SetActive(true);
+                    break;
+                case 3:
+                    this.parede4.SetActive(true);
+                    break;
+            }
+        }
+    }
+
+    
+
+
+
     public void TurnOnTV()
     {
         this.buttonTV.SetActive(false);
