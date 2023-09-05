@@ -56,6 +56,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject quadro;
     [SerializeField] private GameObject luzVerd;
     [SerializeField] private GameObject luzVerm;
+    [SerializeField] private MouseControl mouseControl;
 
 
 
@@ -318,6 +319,8 @@ public class DisplayImage : MonoBehaviour
         this.HUD.SetActive(false);
         this.computador.SetActive(true);
         this.ehComputador = true;
+        mouseControl.OnButtonCursorEnterComputer();
+        DisableWall2();
         mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 11, mainCamera.transform.position.z);
     }
 
@@ -325,6 +328,8 @@ public class DisplayImage : MonoBehaviour
         this.HUD.SetActive(true);
         this.computador.SetActive(false);
         this.ehComputador = false;
+        mouseControl.OnButtonCursorEnter();
+        EnableWall2();
         mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z);
     }
 
@@ -337,7 +342,6 @@ public class DisplayImage : MonoBehaviour
 
     private void DisableWall2()
     {
-        ;
         this.parede2.SetActive(false);
     }
 
