@@ -37,7 +37,11 @@ public class Verifica : MonoBehaviour
             this.fourDigits.SetActive(false);
             this.portaFechada.SetActive(false);
             this.portaAberta.SetActive(true);
+            this.martelo.SetActive(true);
             Actions.OnStoryAdvanced(3);
+
+            //Para impedir que o loop se repita
+            this.answerDigit1.text = "0";
         }
     }
 
