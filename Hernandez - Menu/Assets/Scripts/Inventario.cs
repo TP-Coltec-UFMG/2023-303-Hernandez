@@ -16,6 +16,7 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject tvCrack;
     [SerializeField] private GameObject tvChanels;
     [SerializeField] private GameObject UVCollider;
+    [SerializeField] private GameObject restart;
     [SerializeField] GameObject tvNiverButton;
     [SerializeField] private int itemNumber;
     public bool activeDrag = false;
@@ -58,6 +59,8 @@ public class Inventario : MonoBehaviour, IDragHandler, IEndDragHandler
                     this.inventarioBase.SetActive(false);
                     this.leCanvas.SetActive(false);
                     this.gameOver.SetActive(true);
+                    this.restart.SetActive(true);
+
                 break;
             }
 

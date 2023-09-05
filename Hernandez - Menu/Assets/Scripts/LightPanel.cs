@@ -12,6 +12,9 @@ public class LightPanel : MonoBehaviour
 
     [SerializeField] GameObject tvButton;
     [SerializeField] DisplayImage displayImage;
+    [SerializeField] private GameObject luzVerd;
+    [SerializeField] private GameObject luzVerm;
+    [SerializeField] private GameObject luzGlob;
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +26,8 @@ public class LightPanel : MonoBehaviour
             this.computador.SetActive(true);
             this.displayImage.TurnOffLightPanel();
             this.tvButton.SetActive(true);
+            this.luzVerd.SetActive(false);
+            this.luzGlob.SetActive(true);
 
         } else{
             this.tvButton.SetActive(false);

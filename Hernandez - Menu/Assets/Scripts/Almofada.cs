@@ -10,6 +10,8 @@ public class Almofada : MonoBehaviour
     private bool aindaExiste = true;
     private bool clicado = false;
 
+
+
     public void MoveAlmofada(){
         if(!clicado) {
             if(aindaExiste) fusivel.SetActive(true);
