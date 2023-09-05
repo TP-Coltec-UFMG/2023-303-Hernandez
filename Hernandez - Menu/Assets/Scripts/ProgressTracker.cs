@@ -33,8 +33,9 @@ public class ProgressTracker : MonoBehaviour
         for(int i = 0; i<10; i++){
             
             if(this.progress[i]){
+
                 this.AtualizaDica(i);
-                i++;
+                Debug.Log("atualizou "+ i);
             } else
             {
                 break;
@@ -53,6 +54,7 @@ public class ProgressTracker : MonoBehaviour
                 break;
             case 1:
                 this.dicas.text = "Parece que a TV ligou, como devo sintonizá-la para prosseguir?";
+                Debug.Log("AAAAAAAA");
                 break;
 
             case 2:

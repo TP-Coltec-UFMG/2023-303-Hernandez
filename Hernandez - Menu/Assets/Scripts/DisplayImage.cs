@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DisplayImage : MonoBehaviour
 {
-    static int currentWall = 0;
+    private int currentWall = 0;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject quadroMC;
     private SpriteRenderer sprite;
