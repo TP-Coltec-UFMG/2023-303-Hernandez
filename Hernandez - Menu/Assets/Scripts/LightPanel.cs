@@ -20,7 +20,7 @@ public class LightPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(verifica == 3){
+        if(verifica == 6){
             Actions.OnStoryAdvanced(1);
             this.luz.SetActive(false);
             this.lightButton.SetActive(false);

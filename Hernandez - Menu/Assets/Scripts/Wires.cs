@@ -5,11 +5,13 @@ using UnityEngine;
 public class Wires : MonoBehaviour
 {
     static int fiosCertos = 0;
-    static bool jaVerificou = false;
+    private bool taCerto = false;
     Vector3 startPoint;
     Vector3 startPosition;
     [SerializeField] SpriteRenderer wireEnd;
-    private bool taCerto = false;
+
+
+    private bool jaVerificou = false;
     [SerializeField] LightPanel lightPanel;
 
 
@@ -19,26 +21,29 @@ public class Wires : MonoBehaviour
         startPoint = transform.parent.position;
         startPosition = this.transform.position;
 
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(fiosCertos == 4){
-            //Se o jogador acertou as todos os fios: espera 0.5 segundos e destroi o script
-            Debug.Log("FUNCIONOU!");
-            Invoke("Destruir", 0.5f );
-        } else{
-            CancelInvoke("Destruir");
+
+            if(!jaVerificou){
+            this.lightPanel.verifica++;
+            Debug.Log(lightPanel.verifica);
+            jaVerificou = true;
         }
+
+
+        }
+
     }
 
     private void Destruir(){
         //ultimos suspiros do script
-        if(!jaVerificou){
-            this.lightPanel.verifica++;
-            jaVerificou = true;
-        }
+
 
         Debug.Log(lightPanel.verifica);
     }
