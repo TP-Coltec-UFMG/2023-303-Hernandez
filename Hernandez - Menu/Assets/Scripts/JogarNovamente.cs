@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class JogarNovamente : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource audioNvmnt;
     public void CallJogarNovamente()
     {
         SceneManager.LoadScene("Menu");
@@ -14,6 +14,6 @@ public class JogarNovamente : MonoBehaviour
 
     public void ExcluirTodoTipoDeSomExistente()
     {
-        this.audio.Stop();
+        this.audioNvmnt.Stop();
     }
 }

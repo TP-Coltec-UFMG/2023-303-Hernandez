@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
     public void Reiniciar(){
-        SceneManager.LoadScene("Secreto");
+        SceneManager.LoadScene("Menu");
     }
 }
