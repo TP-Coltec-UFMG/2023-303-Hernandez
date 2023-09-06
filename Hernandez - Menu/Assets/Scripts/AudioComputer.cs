@@ -7,7 +7,7 @@ using TMPro;
 
 public class AudioComputer : MonoBehaviour
 {
-    private AudioSource audio;
+    private AudioSource audioPC;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject play;
@@ -22,12 +22,12 @@ public class AudioComputer : MonoBehaviour
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioPC = GetComponent<AudioSource>();
     }
 
     private void Update() {
-        if(audio.isPlaying){
-            this.tempo = (int)this.audio.time;
+        if(audioPC.isPlaying){
+            this.tempo = (int)this.audioPC.time;
             this.seg = tempo % 60;
             this.min = (tempo / 60) % 60;
             if (seg < 10) this.cronometro.text = min.ToString() + ":0" + seg.ToString() + "/0:40";
@@ -39,8 +39,8 @@ public class AudioComputer : MonoBehaviour
         if(!ativo){
             this.player.SetActive(true);
             this.ativo = true;
-            this.audio.Play();
-            this.audio.time = segAtual;
+            this.audioPC.Play();
+            this.audioPC.time = segAtual;
 
             this.play.SetActive(false);
             this.pause.SetActive(true);
@@ -55,19 +55,19 @@ public class AudioComputer : MonoBehaviour
     }
 
     public void TocaMusica(){
-        if(audio.isPlaying) return;
+        if(audioPC.isPlaying) return;
         else if (ativo){
-            this.audio.Play();
-            this.audio.time = segAtual;
+            this.audioPC.Play();
+            this.audioPC.time = segAtual;
             this.play.SetActive(false);
             this.pause.SetActive(true);
         }
     }
 
     public void PausaMusica(){
-        if(audio.isPlaying){
-            this.segAtual = this.audio.time;
-            this.audio.Stop();
+        if(audioPC.isPlaying){
+            this.segAtual = this.audioPC.time;
+            this.audioPC.Stop();
 
             this.play.SetActive(true);
             this.pause.SetActive(false);
@@ -75,13 +75,13 @@ public class AudioComputer : MonoBehaviour
     }
 
     public void ResetaMusica(){
-        if(audio.isPlaying){
+        if(audioPC.isPlaying){
             this.segAtual = 0;
-            this.audio.time = segAtual;
+            this.audioPC.time = segAtual;
         } else {
             this.segAtual = 0;
-            this.audio.Play();
-            this.audio.time = segAtual;
+            this.audioPC.Play();
+            this.audioPC.time = segAtual;
             this.play.SetActive(false);
             this.pause.SetActive(true);
         }
