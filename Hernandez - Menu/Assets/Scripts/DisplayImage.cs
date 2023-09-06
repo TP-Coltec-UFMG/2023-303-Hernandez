@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DisplayImage : MonoBehaviour
 {
-    static int currentWall = 0;
+    private int currentWall = 0;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject quadroMC;
     private SpriteRenderer sprite;
@@ -52,6 +52,13 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject almofada;
     [SerializeField] private GameObject ModoAjuda;
     [SerializeField] private GameObject botoesP1;
+    [SerializeField] private GameObject botoesP3;
+    [SerializeField] private GameObject quadro;
+    [SerializeField] private GameObject luzVerd;
+    [SerializeField] private GameObject luzVerm;
+    [SerializeField] private MouseControl mouseControl;
+    [SerializeField] private GameObject panelCadeado;
+
 
 
     private bool ehComputador = false;
@@ -119,20 +126,35 @@ public class DisplayImage : MonoBehaviour
 
     //Desabilitar Puzzles ///
 
+    public void TurnOnQuadro(){
+
+
+        this.quadro.SetActive(true);
+        this.botoesP3.SetActive(false);
+        
+    }
+
+    public void TurnOffQuadro(){
+
+        this.quadro.SetActive(false);
+        this.botoesP3.SetActive(true);
+        
+    }
+
     public void TurnOnOffModoAjuda(){
 
         if(!ModoAjudaOn){
                 this.ModoAjuda.SetActive(true);
                 this.parede1.SetActive(false);
                 this.parede2.SetActive(false);
-                this.garfoOpen.SetActive(false);
+                this.botoesP3.SetActive(false);
                 this.parede4.SetActive(false);
                 this.botaoDir.SetActive(false);
                 this.botaoEsq.SetActive(false);
                 this.ModoAjudaOn = true;
         } else{
             this.ModoAjuda.SetActive(false);
-            this.garfoOpen.SetActive(true);
+            this.botoesP3.SetActive(true);
             this.botaoDir.SetActive(true);
             this.botaoEsq.SetActive(true);
             this.ModoAjudaOn = false;
@@ -192,6 +214,14 @@ public class DisplayImage : MonoBehaviour
 
     }
 
+    public void TurnOnPanelCadeado(){
+        this.panelCadeado.SetActive(true); 
+    }
+
+    public void TurnOffPanelCadeado(){
+        this.panelCadeado.SetActive(false); 
+    }
+
     public void TurnOnNiver()
     {
         this.niverTVBase.SetActive(true);
@@ -207,21 +237,21 @@ public class DisplayImage : MonoBehaviour
     public void TurnOnGarfo()
     {
         this.garfoBase.SetActive(true);
-        this.almofada.SetActive(false);
+        this.botoesP3.SetActive(false);
         this.garfoOpen.SetActive(false);
     }
 
     public void TurnOffGarfo()
     {
         this.garfoBase.SetActive(false);
-        this.almofada.SetActive(true);
+        this.botoesP3.SetActive(true);
         this.garfoOpen.SetActive(true);
     }
 
     public void GetGarfo()
     {
         this.garfoBase.SetActive(false);
-        this.almofada.SetActive(true);
+        this.botoesP3.SetActive(true);
         this.garfoInventario.SetActive(true);
         this.garfoSprite.SetActive(false);
         this.garfoOpen.SetActive(false);
@@ -268,12 +298,15 @@ public class DisplayImage : MonoBehaviour
     {
         this.lightPanel.SetActive(true);
         this.lightPanel2.SetActive(true);
+        this.luzVerd.SetActive(false);
+        this.luzVerm.SetActive(false);
     }
-
     public void TurnOffLightPanel()
     {
         this.lightPanel.SetActive(false);
         this.lightPanel2.SetActive(false);
+        this.luzVerd.SetActive(true);
+        this.luzVerm.SetActive(true);
     }
 
     public void TurnOn8Puzzle(){
@@ -295,6 +328,8 @@ public class DisplayImage : MonoBehaviour
         this.HUD.SetActive(false);
         this.computador.SetActive(true);
         this.ehComputador = true;
+        mouseControl.OnButtonCursorEnterComputer();
+        DisableWall2();
         mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 11, mainCamera.transform.position.z);
     }
 
@@ -302,6 +337,8 @@ public class DisplayImage : MonoBehaviour
         this.HUD.SetActive(true);
         this.computador.SetActive(false);
         this.ehComputador = false;
+        mouseControl.OnButtonCursorEnter();
+        EnableWall2();
         mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z);
     }
 
@@ -314,7 +351,6 @@ public class DisplayImage : MonoBehaviour
 
     private void DisableWall2()
     {
-        ;
         this.parede2.SetActive(false);
     }
 

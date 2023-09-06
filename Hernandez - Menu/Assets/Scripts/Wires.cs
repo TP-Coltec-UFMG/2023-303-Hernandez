@@ -10,7 +10,7 @@ public class Wires : MonoBehaviour
     Vector3 startPosition;
     [SerializeField] SpriteRenderer wireEnd;
     private bool taCerto = false;
-    public LightPanel lightPanel;
+    [SerializeField] LightPanel lightPanel;
 
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class Wires : MonoBehaviour
     private void Destruir(){
         //ultimos suspiros do script
         if(!jaVerificou){
-            lightPanel.verifica++;
+            this.lightPanel.verifica++;
             jaVerificou = true;
         }
 

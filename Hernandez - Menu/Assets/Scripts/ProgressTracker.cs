@@ -33,8 +33,8 @@ public class ProgressTracker : MonoBehaviour
         for(int i = 0; i<10; i++){
             
             if(this.progress[i]){
+
                 this.AtualizaDica(i);
-                i++;
             } else
             {
                 break;
@@ -54,43 +54,30 @@ public class ProgressTracker : MonoBehaviour
             case 1:
                 this.dicas.text = "Parece que a TV ligou, como devo sintonizá-la para prosseguir?";
                 break;
-
             case 2:
                 this.dicas.text = "Esse vídeo parece me dar uma dica, talvez algo relacionado a data de gravação";
                 break;
-
             case 3:
                 this.dicas.text = "Vi alguém usando um martelo para quebrar algo há pouco, devo fazer o mesmo?";
                 break;
-
             case 4:
                 this.dicas.text = "Onde devo encaixar essa lâmpada UV? Será que há algum abajur por perto?";
                 break;
-
             case 5:
                 this.dicas.text = "Algo apareceu nesses papéis perto do abajur.. uma senha? Onde devo usá-la?";
                 break;
-
             case 6:
                 this.dicas.text = "Esse áudio no computador se refere a um quadro, lembro de ter visto um por aqu";
                 break;
-
             case 7:
                 this.dicas.text = "O poema parece contar uma história, será que tem relação com aquelas imagens do varal ao lado da porta?";
                 break;
-
             case 8:
-                this.dicas.text = "alguma dica relacionada ao cadeado";
+                this.dicas.text = "Os símbolos dos livros se parecem com os símbolos do cadeado ao lado do computador";
                 break;
-
              case 9:
-                this.dicas.text = "alguma dica relacionada ao “ejetar disco”";
+                this.dicas.text = "Talvez eu devesse procurar outra parte da chave em algum lugar, será que é algo relacionado ao computador?";
                 break;
-
         }
     }
-
-    
-
-
 }
