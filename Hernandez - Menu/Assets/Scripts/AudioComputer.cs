@@ -30,8 +30,8 @@ public class AudioComputer : MonoBehaviour
             this.tempo = (int)this.audio.time;
             this.seg = tempo % 60;
             this.min = (tempo / 60) % 60;
-            if (seg < 10) this.cronometro.text = min.ToString() + ":0" + seg.ToString() + "/0:45";
-            else this.cronometro.text = min.ToString() + ":" + seg.ToString() + "/0:45";
+            if (seg < 10) this.cronometro.text = min.ToString() + ":0" + seg.ToString() + "/0:40";
+            else this.cronometro.text = min.ToString() + ":" + seg.ToString() + "/0:40";
         }
     }
 
