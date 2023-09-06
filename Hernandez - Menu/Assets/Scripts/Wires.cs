@@ -41,7 +41,7 @@ public class Wires : MonoBehaviour
         }
 
         Debug.Log(lightPanel.verifica);
-        Destroy(this);
+        this.GetComponent<Wires>().enabled = false;
     }
 
     private void OnMouseDrag(){

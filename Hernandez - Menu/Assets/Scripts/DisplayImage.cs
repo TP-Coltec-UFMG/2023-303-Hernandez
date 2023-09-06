@@ -14,6 +14,8 @@ public class DisplayImage : MonoBehaviour
     private SpriteRenderer sprite;
     private bool ModoAjudaOn = false;
 
+    private bool MenuPauseOn = false;
+
     [SerializeField] private GameObject parede1;
     [SerializeField] private GameObject parede2;
     [SerializeField] private GameObject parede3;
@@ -160,6 +162,32 @@ public class DisplayImage : MonoBehaviour
             this.botaoEsq.SetActive(true);
             this.ModoAjudaOn = false;
 
+            switch(currentWall){
+                case 0:
+                    this.parede1.SetActive(true);
+                    break;
+                case 1:
+                    this.parede2.SetActive(true);
+                    break;
+                case 2:
+                    this.parede3.SetActive(true);
+                    break;
+                case 3:
+                    this.parede4.SetActive(true);
+                    break;
+            }
+        }
+    }
+
+    public void MenuPause(){
+        if(!MenuPauseOn){
+            MenuPauseOn = !MenuPauseOn;
+            DisableWall1();
+            DisableWall2();
+            DisableWall3();
+            DisableWall4();
+        } else{
+            MenuPauseOn = !MenuPauseOn;
             switch(currentWall){
                 case 0:
                     this.parede1.SetActive(true);
@@ -352,7 +380,7 @@ public class DisplayImage : MonoBehaviour
     }
 
     //Desabilitar paredes
-    private void DisableWall1()
+    public void DisableWall1()
     {
         this.TurnOffDigit4();
         this.parede1.SetActive(false);
@@ -376,7 +404,7 @@ public class DisplayImage : MonoBehaviour
     }
 
     //Habilitar paredes
-    private void EnableWall1()
+    public void EnableWall1()
     {
         this.DisableWall2();
         this.DisableWall3();
