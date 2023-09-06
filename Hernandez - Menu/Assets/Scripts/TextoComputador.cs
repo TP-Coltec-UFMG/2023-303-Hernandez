@@ -11,6 +11,7 @@ public class TextoComputador : MonoBehaviour
     [SerializeField] private GameObject block;
     [SerializeField] private GameObject areaDeTrabalho;
     [SerializeField] private GameObject telaDeBloqueio;
+    [SerializeField] private GameObject notepad;
     [SerializeField] private TMP_InputField inputSenBloqueio;
     private string senhaComputador = "linguiça";
     private string senhaArquivo = "A Noite Estrelada";
@@ -37,6 +38,13 @@ public class TextoComputador : MonoBehaviour
             this.painel.SetActive(false);
             this.ativo = false;
         }
+    }
+
+    public void FechaNotes(){
+        this.notepad.SetActive(false);
+    }
+    public void AbreNotes(){
+        this.notepad.SetActive(true);
     }
 
     public void VerificaSenha(string senha){

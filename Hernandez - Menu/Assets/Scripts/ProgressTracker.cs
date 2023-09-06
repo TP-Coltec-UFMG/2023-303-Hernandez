@@ -64,10 +64,10 @@ public class ProgressTracker : MonoBehaviour
                 this.dicas.text = "Onde devo encaixar essa lâmpada UV? Será que há algum abajur por perto?";
                 break;
             case 5:
-                this.dicas.text = "Algo apareceu nesses papéis perto do abajur.. uma senha? Onde devo usá-la?";
+                this.dicas.text = "Algo apareceu nesses papéis perto do abajur... uma senha? Onde devo usá-la?";
                 break;
             case 6:
-                this.dicas.text = "Esse áudio no computador se refere a um quadro, lembro de ter visto um por aqu";
+                this.dicas.text = "Esse áudio no computador se refere a um quadro, lembro de ter visto um por aqui";
                 break;
             case 7:
                 this.dicas.text = "O poema parece contar uma história, será que tem relação com aquelas imagens do varal ao lado da porta?";

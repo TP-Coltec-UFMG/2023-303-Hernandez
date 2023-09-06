@@ -58,6 +58,7 @@ public class DisplayImage : MonoBehaviour
     [SerializeField] private GameObject luzVerm;
     [SerializeField] private MouseControl mouseControl;
     [SerializeField] private GameObject panelCadeado;
+    [SerializeField] private GameObject panelDiario;
 
 
 
@@ -177,7 +178,15 @@ public class DisplayImage : MonoBehaviour
     }
 
     
+    public void TurnOnDiario()
+    {
+        this.panelDiario.SetActive(true);
+    }
 
+    public void TurnOffDiario()
+    {
+        this.panelDiario.SetActive(false);
+    }
 
 
     public void TurnOnTV()
